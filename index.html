@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anupama Abeyrathna | Software Engineer (Fullstack) Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font and smooth scrolling */
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Fira Code', monospace;
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar for terminal aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000; /* Black track */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #374151; /* Dark gray thumb */
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4b5563; /* Lighter gray on hover */
+        }
+
+        /* Subtle background pattern for visual depth - dark green radial */
+        .hero-bg {
+            background-image: radial-gradient(circle at 10% 20%, #0a1a0f 0%, #000000 90%);
+        }
+
+        /* Keyframe for the pulsing glow on the CTA button (Lime Green) */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 5px #a3e635, 0 0 10px #a3e635; }
+            50% { box-shadow: 0 0 15px #a3e635, 0 0 25px #a3e635; }
+        }
+
+        .cta-button {
+            animation: pulse-glow 2.5s infinite ease-in-out;
+        }
+        
+        /* Blinking cursor animation */
+        .blinking-cursor {
+            color: #a3e635; /* lime-400 */
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { color: transparent; }
+            50% { color: #a3e635; }
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-200 antialiased">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo: A<A>. -->
+            <a href="#home" class="text-2xl font-extrabold text-lime-400 hover:text-lime-300 transition duration-300">
+                A<span class="text-gray-200">A</span>.
+            </a>
+            
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#projects" class="text-gray-300 hover:text-lime-400 transition duration-300 font-medium">Projects</a>
+                <a href="#skills" class="text-gray-300 hover:text-lime-400 transition duration-300 font-medium">Skills</a>
+                <a href="#about" class="text-gray-300 hover:text-lime-400 transition duration-300 font-medium">About Me</a>
+                <a href="#contact" class="text-gray-300 hover:text-lime-400 transition duration-300 font-medium">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-200 hover:text-lime-400 transition duration-300 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer (Hidden by default) -->
+        <nav id="mobile-menu" class="hidden md:hidden absolute w-full bg-black shadow-xl border-t border-gray-800">
+            <div class="flex flex-col p-4 space-y-2">
+                <a href="#projects" class="block py-2 px-3 text-gray-300 hover:bg-gray-800 hover:text-lime-400 transition duration-300 font-medium text-lg">Projects</a>
+                <a href="#skills" class="block py-2 px-3 text-gray-300 hover:bg-gray-800 hover:text-lime-400 transition duration-300 font-medium text-lg">Skills</a>
+                <a href="#about" class="block py-2 px-3 text-gray-300 hover:bg-gray-800 hover:text-lime-400 transition duration-300 font-medium text-lg">About Me</a>
+                <a href="#contact" class="block py-2 px-3 text-gray-300 hover:bg-gray-800 hover:text-lime-400 transition duration-300 font-medium text-lg">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="min-h-screen">
+        
+        <!-- 1. Hero Section -->
+        <section id="home" class="hero-bg py-24 sm:py-32 lg:py-40 flex items-center min-h-[60vh]">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Placeholder icon -->
+                    <div class="mb-6 mx-auto w-16 h-16 text-lime-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line>
+                        </svg>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-semibold leading-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-50 to-lime-400">
+                        <span class="text-lime-400 mr-2 sm:mr-4">></span>Hi, I'm Anupama<span class="blinking-cursor">_</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl text-gray-400 mb-8 font-light">
+                        Software Engineer (Fullstack) | Building robust web, mobile, and automated solutions.
+                    </p>
+                    <a href="#contact" class="inline-block px-10 py-4 text-lg font-semibold text-gray-900 bg-lime-400 rounded-none hover:bg-lime-300 transition duration-500 transform hover:scale-105 cta-button">
+                        Start a Project Together
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Projects Section -->
+        <section id="projects" class="py-16 sm:py-24 bg-black border-t border-b border-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-semibold text-center mb-12 text-gray-50">Featured Work</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Project Card 1: E-commerce Platform -->
+                    <div class="bg-gray-900 rounded-none border border-gray-800 overflow-hidden group hover:border-lime-400 transition duration-500">
+                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Fullstack+E-Commerce+App" 
+                             alt="E-Commerce Platform Project" class="w-full h-48 object-cover transition duration-500 group-hover:scale-[1.02] rounded-none">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-lime-400 mb-2">Scalable E-Commerce Backend</h3>
+                            <p class="text-gray-400 text-sm mb-4">Developed a high-performance, microservices-based e-commerce platform handling 10k+ concurrent users. Focus on latency and security.</p>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-none mb-3">#NextJS #Firebase #MySQL</span>
+                            <a href="#" class="text-lime-400 hover:text-lime-300 font-medium flex items-center">
+                                View Case Study
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: Mobile App -->
+                    <div class="bg-gray-900 rounded-none border border-gray-800 overflow-hidden group hover:border-lime-400 transition duration-500">
+                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Mobile+App+Design" 
+                             alt="Data Visualization Dashboard Project" class="w-full h-48 object-cover transition duration-500 group-hover:scale-[1.02] rounded-none">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-lime-400 mb-2">Cross-Platform Mobile App</h3>
+                            <p class="text-gray-400 text-sm mb-4">Designed and built a cross-platform (iOS/Android) application using Flutter with state-of-the-art deployment on GCP.</p>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-none mb-3">#Flutter #GCP #Supabase</span>
+                            <a href="#" class="text-lime-400 hover:text-lime-300 font-medium flex items-center">
+                                View Case Study
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: Automation Script -->
+                    <div class="bg-gray-900 rounded-none border border-gray-800 overflow-hidden group hover:border-lime-400 transition duration-500">
+                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Automation+Script" 
+                             alt="SaaS Landing Page Project" class="w-full h-48 object-cover transition duration-500 group-hover:scale-[1.02] rounded-none">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-lime-400 mb-2">Python Data Automation Pipeline</h3>
+                            <p class="text-gray-400 text-sm mb-4">Created scalable Python scripts for ETL processes, reducing manual reporting time by 60% and improving data integrity.</p>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-none mb-3">#Python #Automation #ETL</span>
+                            <a href="#" class="text-lime-400 hover:text-lime-300 font-medium flex items-center">
+                                View Case Study
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 3. Skills Section -->
+        <section id="skills" class="py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-semibold text-center mb-12 text-gray-50">My Core Stack</h2>
+                
+                <div class="max-w-5xl mx-auto grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-5 gap-6">
+                    
+                    <!-- 1. HTML5 -->
+                    <div class="p-4 bg-gray-900 rounded-none border border-gray-800 flex flex-col items-center justify-center hover:bg-lime-900/30 transition duration-300 transform hover:scale-105">
+                        <svg class="w-8 h-8 text-orange-500 mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h16l-1 16-7 3-7-3-1-16z"></path><path d="M15 5h-6l.5 6h5l-.5 4-2.5 1-2.5-1-.25-2"></path></svg>
+                        <span class="text-xs font-medium text-gray-300">HTML5</span>
+                    </div>
+
+                    <!-- 2. React -->
+                    <div class="p-4 bg-gray-900 rounded-none border border-gray-800 flex flex-col items-center justify-center hover:bg-lime-900/30 transition duration-300 transform hover:scale-105">
+                        <svg class="w-8 h-8 text-cyan-400 mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>
+                        <span class="text-xs font-medium text-gray-300">React</span>
+                    </div>
+
+                    <!-- 3. Next.js -->
+                    <div class="p-4 bg-gray-900 rounded-none border border-gray-800 flex flex-col items-center justify-center hover:bg-lime-900/30 transition duration-300 transform hover:scale-105">
+                        <svg class="w-8 h-8 text-gray-50 mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l10 20-10-5-10 5z"></path></svg>
+                        <span class="text-xs font-medium text-gray-300">Next.js</span>
+                    </div>
+                    
+                    <!-- 4. Flutter -->
+                    <div class="p-4 bg-gray-900 rounded-none border border-gray-800 flex flex-col items-center justify-center hover:bg-lime-900/30 transition duration-300 transform hover:scale-105">
+                        <svg class="w-8 h-8 text-blue-400 mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20l8-8-8-8-8 8z"></path><path d="M12 20L4 12l8-8-8 8z"></path></svg>
+                        <span class="text-xs font-medium text-gray-300">Flutter</span>
+                    </div>
+
+                    <!-- 5. Python -->
+                    <div class="p-4 bg-gray-900 rounded-none border border-gray-800 flex flex-col items-center justify-center hover:bg-lime-900/30 transition duration-300 transform hover:scale-105">
+                        <svg class="w-8 h-8 text-yellow-600 mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="M5 12h14"></path><path d="M5 5h14"></path><path d="M5 19h14"></path></svg>
+                        <span class="text-xs font-medium text-gray-300">Python</span>
+                    </div>
+                    
+                    <!-- 6. GCP -->
+                    <div class="p-4 bg-gray-900 rounded-none border border-gray-800 flex flex-col items-center justify-center hover:bg-lime-900/30 transition duration-300 transform hover:scale-105">
+                        <svg class="w-8 h-8 text-red-500 mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-9.2 13.5l1.8 1.8L12 22l7.4-4.7-1.8-1.8A10 10 0 0 0 12 2z"></path><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"></path></svg>
+                        <span class="text-xs font-medium text-gray-300">GCP</span>
+                    </div>
+
+                    <!-- 7. GitHub -->
+                    <div class="p-4 bg-gray-900 rounded-none border border-gray-800 flex flex-col items-center justify-center hover:bg-lime-900/30 transition duration-300 transform hover:scale-105">
+                        <svg class="w-8 h-8 text-gray-400 mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87c0-2.34-1.92-3.83-4-4.17 1-.16 2-.26 2-.26 2.5-1 3.5-3 3.5-3s-.5-1-1.5-1.5c-.73-.55-1.5-.9-2.5-1v-2c0-.5-.5-1-1-1h-2c-.5 0-1 .5-1 1v2c-1.37.5-2.5 1.5-2.5 1.5s-1.5 2 3.5 3c2.08.34 4 1.83 4 4.17V19"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                        <span class="text-xs font-medium text-gray-300">GitHub</span>
+                    </div>
+
+                    <!-- 8. Firebase -->
+                    <div class="p-4 bg-gray-900 rounded-none border border-gray-800 flex flex-col items-center justify-center hover:bg-lime-900/30 transition duration-300 transform hover:scale-105">
+                        <svg class="w-8 h-8 text-amber-500 mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4-8-12c0-4 4-8 8-8s8 4 8 8c0 8-8 12-8 12z"></path><path d="M12 22V2"></path></svg>
+                        <span class="text-xs font-medium text-gray-300">Firebase</span>
+                    </div>
+
+                    <!-- 9. MySQL -->
+                    <div class="p-4 bg-gray-900 rounded-none border border-gray-800 flex flex-col items-center justify-center hover:bg-lime-900/30 transition duration-300 transform hover:scale-105">
+                        <svg class="w-8 h-8 text-blue-600 mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12A10 10 0 0 0 12 2v2a8 8 0 0 1 8 8z"></path><path d="M12 22A10 10 0 0 0 2 12h2a8 8 0 0 1 8 8z"></path></svg>
+                        <span class="text-xs font-medium text-gray-300">MySQL</span>
+                    </div>
+                    
+                    <!-- 10. Supabase -->
+                    <div class="p-4 bg-gray-900 rounded-none border border-gray-800 flex flex-col items-center justify-center hover:bg-lime-900/30 transition duration-300 transform hover:scale-105">
+                        <svg class="w-8 h-8 text-green-500 mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><path d="m18 6-6 6-6-6"></path></svg>
+                        <span class="text-xs font-medium text-gray-300">Supabase</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. About Me Section -->
+        <section id="about" class="py-16 sm:py-24 bg-black border-t border-b border-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    
+                    <!-- Text Content -->
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl font-semibold mb-6 text-gray-50">Who I Am & How I Work</h2>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            I'm Anupama, a **Software Engineer** with **1+ years of professional experience** focusing on the intersection of intuitive design and robust engineering across **web and mobile development**. My philosophy centers on building functional products that feel effortless to use. I believe in **Human-Centered Design**, prioritizing performance, and always writing clean, maintainable code.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <!-- Value Proposition 1 -->
+                            <div class="flex items-start">
+                                <span class="text-lime-400 mr-3 text-xl mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </span>
+                                <p class="text-gray-300">
+                                    **Performance First:** Every solution I build is optimized for speed, delivering lightning-fast load times and seamless user experiences.
+                                </p>
+                            </div>
+                            <!-- Value Proposition 2 -->
+                            <div class="flex items-start">
+                                <span class="text-lime-400 mr-3 text-xl mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </span>
+                                <p class="text-gray-300">
+                                    **Adaptive Design:** I ensure all projects are fully responsive and accessible, looking flawless on any device or screen size (mobile-first approach).
+                                </p>
+                            </div>
+                            <!-- Value Proposition 3 -->
+                            <div class="flex items-start">
+                                <span class="text-lime-400 mr-3 text-xl mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6 4-4 4 4"></path><path d="M12 2v10"></path><path d="M2 19h20"></path></svg>
+                                </span>
+                                <p class="text-gray-300">
+                                    **Transparent Process:** From wireframing to deployment, I maintain open communication and clear documentation for a smooth collaboration.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder for Resume/CV Link or Image -->
+                    <div class="flex flex-col items-center justify-center bg-gray-900 p-8 rounded-none border border-gray-700 h-full">
+                        <img src="https://placehold.co/200x200/1f2937/d1d5db?text=Anupama+A" 
+                             alt="Professional Headshot Placeholder" class="w-40 h-40 rounded-full object-cover mb-6 border-4 border-lime-400/50">
+                        <p class="text-xl font-semibold mb-4 text-gray-50">Ready to learn more?</p>
+                        <a href="#" class="px-6 py-3 bg-gray-700 text-lime-400 rounded-none font-medium hover:bg-gray-600 transition duration-300">
+                            Download Full Resume (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 5. Contact Section -->
+        <section id="contact" class="py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-semibold text-center mb-6 text-gray-50">Let's Build Something Great</h2>
+                <p class="text-center text-gray-400 max-w-2xl mx-auto mb-12">
+                    Have a project idea, a job opportunity, or just want to connect? Send me a message, and I'll get back to you within 24 hours.
+                </p>
+
+                <div class="max-w-2xl mx-auto bg-gray-900 p-8 md:p-10 rounded-none border border-gray-700">
+                    <form id="contactForm">
+                        <div class="mb-5">
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                            <input type="text" id="name" name="name" required
+                                   class="w-full px-4 py-3 bg-black border border-gray-700 rounded-none text-gray-200 focus:ring-lime-400 focus:border-lime-400 transition duration-300"
+                                   placeholder="Your Name">
+                        </div>
+                        <div class="mb-5">
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-3 bg-black border border-gray-700 rounded-none text-gray-200 focus:ring-lime-400 focus:border-lime-400 transition duration-300"
+                                   placeholder="you@example.com">
+                        </div>
+                        <div class="mb-5">
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                      class="w-full px-4 py-3 bg-black border border-gray-700 rounded-none text-gray-200 focus:ring-lime-400 focus:border-lime-400 transition duration-300"
+                                      placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit"
+                                class="w-full px-6 py-3 bg-lime-400 text-gray-900 font-bold rounded-none hover:bg-lime-300 transition duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-lime-500/30">
+                            Send Message
+                        </button>
+                        <div id="contactMessage" class="mt-4 text-center text-sm font-medium hidden"></div>
+                    </form>
+
+                    <!-- Direct Contact Info -->
+                    <div class="mt-8 pt-6 border-t border-gray-700 text-center">
+                        <p class="text-gray-500">Or reach me directly:</p>
+                        <p class="mt-2 text-lg font-medium text-gray-200">
+                            <a href="mailto:anupamas.abeyrathna@gmail.com" class="hover:text-lime-400 transition duration-300">anupamas.abeyrathna@gmail.com</a>
+                        </p>
+                        <div class="flex justify-center space-x-6 mt-4">
+                            <!-- LinkedIn Icon -->
+                            <a href="#" target="_blank" class="text-gray-400 hover:text-lime-400 transition duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 0-6-6h-4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4a6 6 0 0 0 6-6v-2a2 2 0 0 0-2-2z"></path><line x1="12" x2="12" y1="2" y2="22"></line></svg>
+                            </a>
+                            <!-- GitHub Icon -->
+                            <a href="#" target="_blank" class="text-gray-400 hover:text-lime-400 transition duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87c0-2.34-1.92-3.83-4-4.17 1-.16 2-.26 2-.26 2.5-1 3.5-3 3.5-3s-.5-1-1.5-1.5c-.73-.55-1.5-.9-2.5-1v-2c0-.5-.5-1-1-1h-2c-.5 0-1 .5-1 1v2c-1.37.5-2.5 1.5-2.5 1.5s-1.5 2 3.5 3c2.08.34 4 1.83 4 4.17V19"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                            </a>
+                            <!-- Twitter/X Icon -->
+                            <a href="#" target="_blank" class="text-gray-400 hover:text-lime-400 transition duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17-17 12 1.2 1.1 2.2 2 3.2 2 3 0 5-2 5-2s2-2 2-5-2-5-2-5-2-1-5-1c-1.2 0-2.2-.9-3.2-2C5 7 3 5 3 5s1.2-1 3-1c3 0 5 2 5 2s2 2 2 5-2 5-2 5c2.3 0 4-1 4-1s.8-.5 1.4-1.2c.6-.7 1.2-1.4 1.4-2.2.4-.8.4-1.6 0-2.4-.2-.8-.8-1.4-1.4-2.2-.6-.7-1.4-1.4-2.2-1.4-2.2 0-4-1-4-1s-1.5-1.5-2-2.5c-.5-1-.8-2-1-3C5 5 3 3 3 3s1.2-.9 2.2-1.5c.8-.5 1.8-.8 2.8-1zm1 1.5c-1.5 0-2.5 1-2.5 2.5s1 2.5 2.5 2.5 2.5-1 2.5-2.5-1-2.5-2.5-2.5z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 mt-12 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-500 text-sm">
+                &copy; <span id="currentYear"></span> Anupama Abeyrathna | Built with HTML, Tailwind CSS, and passion.
+            </a
+        </div>
+    </footer>
+
+    <!-- JavaScript for dynamic features -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // Mobile Menu Toggle Logic
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                menuButton.setAttribute('aria-expanded', mobileMenu.classList.contains('hidden') ? 'false' : 'true');
+            });
+
+            // Close mobile menu when a link is clicked (for smooth scrolling)
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuButton.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // Handle Contact Form Submission (Prevent default behavior and show success/error message)
+            const contactForm = document.getElementById('contactForm');
+            const contactMessage = document.getElementById('contactMessage');
+
+            contactForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                
+                const formData = new FormData(contactForm);
+                const name = formData.get('name');
+                
+                contactMessage.textContent = `Thank you, ${name}! Your message has been received. I'll be in touch soon.`;
+                contactMessage.classList.remove('hidden');
+                contactMessage.classList.remove('text-red-400');
+                contactMessage.classList.add('text-lime-400'); // Changed to lime
+
+                setTimeout(() => {
+                    contactForm.reset();
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
