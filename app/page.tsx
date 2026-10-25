@@ -8,8 +8,8 @@ const btn = "inline-flex items-center gap-2 rounded-[10px] border border-line-hi
 
 function Role({ time, title, org, points }: { time: string; title: string; org: string; points?: string[] }) {
   return (
-    <div className="grid gap-2 border-b border-line py-7 min-[760px]:grid-cols-[200px_1fr] min-[760px]:gap-8">
-      <time className="pt-[5px] font-mono text-[13px] text-muted">{time}</time>
+    <div className="grid gap-2 border-b border-line py-7 min-[760px]:grid-cols-[200px_1fr] min-[760px]:gap-8 last:border-b-0">
+      <p className="pt-[5px] font-mono text-[13px] text-muted">{time}</p>
       <div>
         <h3 className="text-xl font-semibold tracking-[-0.015em]">{title}</h3>
         <p className={`text-muted ${points ? "mb-3" : ""}`}>{org}</p>
@@ -28,7 +28,7 @@ function Role({ time, title, org, points }: { time: string; title: string; org: 
 export default function Home() {
   return (
     <>
-      <a href="#work" className="absolute -top-16 left-4 z-[100] rounded-lg bg-accent px-3.5 py-2 font-semibold text-bg focus:top-3">Skip to content</a>
+      <a href="#top" className="fixed -top-16 left-4 z-[100] rounded-lg bg-accent px-3.5 py-2 font-semibold text-bg focus:top-3 transition-all">Skip to content</a>
       <Header />
 
       <main id="top">
@@ -44,7 +44,7 @@ export default function Home() {
             <p className="mt-7 font-mono text-sm text-muted">Backend · Web · Mobile · Cloud</p>
             <div className="mt-10 flex flex-wrap gap-3">
               <a href="#work" className={`${btn} border-accent bg-accent font-semibold text-bg hover:border-[#b5f04d] hover:bg-[#b5f04d]`}>Explore My Work</a>
-              <a href={GITHUB} target="_blank" rel="noopener" className={btn}>GitHub <span aria-hidden="true">↗</span></a>
+              <a href={GITHUB} target="_blank" rel="noopener" className={btn}>GitHub <span aria-hidden="true">↗</span><span className="sr-only">(opens in a new tab)</span></a>
             </div>
             <div className="mt-12 flex flex-wrap gap-x-7 gap-y-2 text-sm text-muted sm:mt-16">
               {["Currently working @ Techlabs", "Colombo, Sri Lanka"].map((t, i) => (
@@ -72,7 +72,7 @@ export default function Home() {
                     <div className="mb-[22px] flex flex-wrap gap-2" aria-label="Technologies">
                       {p.tags.map((t) => <span key={t} className={chip}>{t}</span>)}
                     </div>
-                    <a href={p.href} target="_blank" rel="noopener" className="ext text-sm">View on GitHub ↗</a>
+                    <a href={p.href} target="_blank" rel="noopener" className="ext text-sm">View on GitHub ↗<span className="sr-only">(opens in a new tab)</span></a>
                   </div>
                 </article>
               </Reveal>
@@ -150,10 +150,11 @@ export default function Home() {
               ["LinkedIn", "linkedin.com/in/anupama-abeyrathna", LINKEDIN],
             ].map(([k, v, href]) => (
               <a key={k} href={href} {...(k === "Email" ? {} : { target: "_blank", rel: "noopener" })}
-                className="flex items-center justify-between gap-4 border-b border-line px-1 py-[22px] transition-all hover:bg-surface hover:px-4">
+                className="flex items-center justify-between gap-4 border-b border-line px-1 py-[22px] transition-all hover:bg-surface hover:px-4 last:border-b-0">
                 <span className="min-w-20 font-mono text-[13px] text-muted">{k}</span>
                 <span className="flex-1 [overflow-wrap:anywhere]">{v}</span>
                 <span aria-hidden="true" className="text-accent">↗</span>
+                {k !== "Email" && <span className="sr-only">(opens in a new tab)</span>}
               </a>
             ))}
           </Reveal>

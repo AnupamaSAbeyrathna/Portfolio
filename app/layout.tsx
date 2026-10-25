@@ -8,6 +8,21 @@ const fira = Fira_Code({ subsets: ["latin"], weight: ["400", "500"], variable: "
 export const metadata: Metadata = {
   title: "Anupama Abeyrathna | Software Engineer",
   description: "Anupama Abeyrathna is a software engineer in Colombo, Sri Lanka, working across backend, web, mobile and cloud.",
+  keywords: ["Software Engineer", "Colombo", "Sri Lanka", "Backend", "Web", "Mobile", "Cloud", "Developer", "Portfolio"],
+  authors: [{ name: "Anupama Abeyrathna" }],
+  openGraph: {
+    title: "Anupama Abeyrathna | Software Engineer",
+    description: "Anupama Abeyrathna is a software engineer in Colombo, Sri Lanka, working across backend, web, mobile and cloud.",
+    url: "https://anupama-abeyrathna.com",
+    siteName: "Anupama Abeyrathna Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Anupama Abeyrathna | Software Engineer",
+    description: "Anupama Abeyrathna is a software engineer in Colombo, Sri Lanka, working across backend, web, mobile and cloud.",
+  },
 };
 export const viewport: Viewport = { themeColor: "#0b0c0d" };
 
