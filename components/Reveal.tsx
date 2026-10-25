@@ -3,12 +3,14 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Reveal({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || !("IntersectionObserver" in window)) return;
-    setHidden(true);
+    if (!el || !("IntersectionObserver" in window)) {
+      setHidden(false);
+      return;
+    }
     const io = new IntersectionObserver(
       ([e]) => { if (e.isIntersecting) { setHidden(false); io.disconnect(); } },
       { threshold: 0.12 }
